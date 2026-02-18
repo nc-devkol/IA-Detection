@@ -1,0 +1,66 @@
+2026-02-18 14:53:03 | INFO     | MainThread   | rtsp-connection      | RTSPConnectionManager iniciado: 4 URIs
+2026-02-18 14:53:04 | INFO     | MainThread   | __main__             | ShopliftingDetectionSystem initialized
+2026-02-18 14:53:05 | INFO     | MainThread   | rtsp-connection      | Connected: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=1%26subtype=0
+2026-02-18 14:53:06 | INFO     | MainThread   | rtsp-connection      | Connected: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=2%26subtype=0
+2026-02-18 14:53:07 | INFO     | MainThread   | rtsp-connection      | Connected: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=3%26subtype=0
+2026-02-18 14:53:37 | WARNING  | MainThread   | rtsp-connection      | Connection failed: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:53:37 | INFO     | MainThread   | rtsp-connection      | Initialized: 3/4 cameras connected
+2026-02-18 14:53:37 | INFO     | MainThread   | __main__             | System initialized: 3/4 cameras
+2026-02-18 14:53:37 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Monitor started: interval=30s
+2026-02-18 14:54:07 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Reconnect attempt [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0]: 1/5 backoff=1s
+2026-02-18 14:54:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Connection failed: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:54:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=1 failed=0
+2026-02-18 14:55:07 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Reconnect attempt [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0]: 2/5 backoff=2s
+2026-02-18 14:55:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Connection failed: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:55:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=1 failed=0
+2026-02-18 14:56:07 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Reconnect attempt [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0]: 3/5 backoff=4s
+2026-02-18 14:56:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Connection failed: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:56:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=1 failed=0
+2026-02-18 14:57:07 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Reconnect attempt [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0]: 4/5 backoff=8s
+2026-02-18 14:57:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Connection failed: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:57:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=1 failed=0
+2026-02-18 14:58:07 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Reconnect attempt [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0]: 5/5 backoff=16s
+2026-02-18 14:58:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Connection failed: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:58:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=1 failed=0
+2026-02-18 14:59:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=1 failed=0
+2026-02-18 14:59:37 | ERROR    | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Máximo de reintentos alcanzado (5)
+2026-02-18 14:59:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:00:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:00:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:01:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:01:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:02:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:02:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:03:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:03:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:04:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:04:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:05:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:05:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:06:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:06:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:07:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:07:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:08:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:08:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:09:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:09:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:10:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:10:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:11:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:11:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:12:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:12:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:13:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:13:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:14:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:14:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:15:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:15:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:16:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:16:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:17:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:17:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:18:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:18:37 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1
+2026-02-18 15:19:07 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | Status: connected=3 disconnected=0 failed=1

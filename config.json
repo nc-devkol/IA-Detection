@@ -1,0 +1,63 @@
+{
+    "_comment": "Configuración del Sistema de Detección de Shoplifting",
+    
+    "rtsp": {
+        "uris_path": "rtsp-uris.json",
+        "check_interval": 30,
+        "max_retries": 5,
+        "connection_timeout": 5,
+        "read_timeout": 10,
+        "backoff_max": 60
+    },
+    
+    "inference": {
+        "model_path": "devkol-model/",
+        "confidence_threshold": 0.5,
+        "nms_threshold": 0.4,
+        "input_size": [640, 640],
+        "device": "cpu"
+    },
+    
+    "alerts": {
+        "cooldown_seconds": 60,
+        "methods": ["log"],
+        "email": {
+            "enabled": false,
+            "smtp_server": "",
+            "smtp_port": 587,
+            "from_address": "",
+            "to_addresses": []
+        },
+        "webhook": {
+            "enabled": false,
+            "url": "",
+            "method": "POST"
+        }
+    },
+    
+    "clips": {
+        "enabled": true,
+        "duration_seconds": 10,
+        "buffer_before_seconds": 3,
+        "buffer_after_seconds": 7,
+        "output_directory": "clips/",
+        "format": "mp4",
+        "fps": 15
+    },
+    
+    "performance": {
+        "target_fps": null,
+        "resize_frames": null,
+        "max_queue_size": 100,
+        "num_workers": 1
+    },
+    
+    "logging": {
+        "directory": "logs/",
+        "main_file": "main.log",
+        "max_bytes": 5242880,
+        "backup_count": 5,
+        "console": true,
+        "level": "INFO"
+    }
+}

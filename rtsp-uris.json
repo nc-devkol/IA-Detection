@@ -1,0 +1,8 @@
+{
+    "URIS_LIST": [
+        "rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=1%26subtype=0",
+        "rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=2%26subtype=0",
+        "rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=3%26subtype=0",
+        "rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0"
+    ]
+}

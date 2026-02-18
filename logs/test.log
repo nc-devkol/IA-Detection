@@ -1,0 +1,4 @@
+2026-02-18 14:38:01 | INFO     | MainThread   | test_module          | Este es un mensaje INFO
+2026-02-18 14:38:01 | WARNING  | MainThread   | test_module          | Este es un mensaje WARNING
+2026-02-18 14:38:01 | ERROR    | MainThread   | test_module          | Este es un mensaje ERROR
+2026-02-18 14:38:01 | CRITICAL | MainThread   | test_module          | Este es un mensaje CRITICAL

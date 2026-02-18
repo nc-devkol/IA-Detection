@@ -1,0 +1,272 @@
+2026-02-18 14:44:02 | INFO     | MainThread   | rtsp-connection      | Cargadas 4 URIs desde rtsp-uris.json
+2026-02-18 14:44:02 | INFO     | MainThread   | rtsp-connection      | RTSPConnectionManager inicializado: 4 URIs cargadas
+2026-02-18 14:44:02 | INFO     | MainThread   | __main__             | ShopliftingDetectionSystem inicializado
+2026-02-18 14:44:02 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:44:02 | INFO     | MainThread   | __main__             | 🚀 INICIALIZANDO SISTEMA DE DETECCIÓN DE SHOPLIFTING
+2026-02-18 14:44:02 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:44:02 | INFO     | MainThread   | __main__             | 📡 Inicializando conexiones RTSP...
+2026-02-18 14:44:02 | INFO     | MainThread   | rtsp-connection      | ============================================================
+2026-02-18 14:44:02 | INFO     | MainThread   | rtsp-connection      | Inicializando conexiones RTSP...
+2026-02-18 14:44:02 | INFO     | MainThread   | rtsp-connection      | ============================================================
+2026-02-18 14:44:02 | INFO     | MainThread   | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=1%26subtype=0
+2026-02-18 14:44:03 | INFO     | MainThread   | rtsp-connection      | Conectado exitosamente: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=1%26subtype=0
+2026-02-18 14:44:03 | INFO     | MainThread   | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=2%26subtype=0
+2026-02-18 14:44:04 | INFO     | MainThread   | rtsp-connection      | Conectado exitosamente: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=2%26subtype=0
+2026-02-18 14:44:04 | INFO     | MainThread   | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=3%26subtype=0
+2026-02-18 14:44:05 | INFO     | MainThread   | rtsp-connection      | Conectado exitosamente: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=3%26subtype=0
+2026-02-18 14:44:05 | INFO     | MainThread   | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:44:35 | WARNING  | MainThread   | rtsp-connection      | No se pudo abrir: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:44:35 | INFO     | MainThread   | rtsp-connection      | Resumen: 3/4 cámaras conectadas
+2026-02-18 14:44:35 | INFO     | MainThread   | rtsp-connection      | ============================================================
+2026-02-18 14:44:35 | INFO     | MainThread   | __main__             | ✅ Cámaras conectadas: 3/4
+2026-02-18 14:44:35 | INFO     | MainThread   | __main__             | 👁️  Iniciando monitoreo de conexiones...
+2026-02-18 14:44:35 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Monitor de conexiones iniciado (intervalo: 30s)
+2026-02-18 14:44:35 | INFO     | MainThread   | rtsp-connection      | Sistema de monitoreo iniciado
+2026-02-18 14:44:35 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:44:35 | INFO     | MainThread   | __main__             | ✅ Sistema inicializado correctamente
+2026-02-18 14:44:35 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:44:35 | INFO     | MainThread   | __main__             | 🎬 Iniciando loop principal de procesamiento...
+2026-02-18 14:44:35 | INFO     | MainThread   | __main__             |    (Presiona Ctrl+C para detener)
+2026-02-18 14:45:05 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Verificando salud de conexiones [14:45:05]
+2026-02-18 14:45:05 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Intento de reconexión 1/5 (backoff: 1s)
+2026-02-18 14:45:05 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 30.0s
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 4539
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 151.11
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:45:06 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:45:35 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | No se pudo abrir: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:45:35 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Reconexión fallida. Próximo intento en 1s
+2026-02-18 14:45:36 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Estado: Conectadas=3 | Desconectadas=1 | Fallidas=0
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 60.1s
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 6792
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 113.09
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:45:36 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:46:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Verificando salud de conexiones [14:46:06]
+2026-02-18 14:46:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Intento de reconexión 2/5 (backoff: 2s)
+2026-02-18 14:46:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 90.1s
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 9045
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 100.40
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:46:06 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 120.1s
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 11295
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 94.04
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:46:36 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:46:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | No se pudo abrir: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:46:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Reconexión fallida. Próximo intento en 3s
+2026-02-18 14:46:36 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Estado: Conectadas=3 | Desconectadas=1 | Fallidas=0
+2026-02-18 14:47:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Verificando salud de conexiones [14:47:06]
+2026-02-18 14:47:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Intento de reconexión 3/5 (backoff: 4s)
+2026-02-18 14:47:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 150.1s
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 13548
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 90.23
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:47:06 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 180.1s
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 15798
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 87.69
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:47:36 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:47:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | No se pudo abrir: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:47:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Reconexión fallida. Próximo intento en 7s
+2026-02-18 14:47:36 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Estado: Conectadas=3 | Desconectadas=1 | Fallidas=0
+2026-02-18 14:48:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Verificando salud de conexiones [14:48:06]
+2026-02-18 14:48:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Intento de reconexión 4/5 (backoff: 8s)
+2026-02-18 14:48:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 210.2s
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 18051
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 85.89
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:48:06 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 240.2s
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 20301
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 84.52
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:48:36 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:48:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | No se pudo abrir: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:48:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Reconexión fallida. Próximo intento en 16s
+2026-02-18 14:48:36 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Estado: Conectadas=3 | Desconectadas=1 | Fallidas=0
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 270.2s
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 22551
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 83.46
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:49:06 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:49:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Verificando salud de conexiones [14:49:06]
+2026-02-18 14:49:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Intento de reconexión 5/5 (backoff: 16s)
+2026-02-18 14:49:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Conectando a: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 300.2s
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 24804
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 82.62
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:49:36 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:49:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | No se pudo abrir: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:49:36 | WARNING  | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Reconexión fallida. Próximo intento en 30s
+2026-02-18 14:49:36 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Estado: Conectadas=3 | Desconectadas=1 | Fallidas=0
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 330.2s
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 27057
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 81.93
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 1
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 0
+2026-02-18 14:50:06 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:50:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Verificando salud de conexiones [14:50:06]
+2026-02-18 14:50:06 | ERROR    | Thread-1 (_monitor_loop) | rtsp-connection      | [rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0] Máximo de reintentos alcanzado (5)
+2026-02-18 14:50:06 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Estado: Conectadas=3 | Desconectadas=0 | Fallidas=1
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 
+⚠️  Interrupción detectada por el usuario
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 
+🛑 Cerrando sistema...
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 
+======================================================================
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 📊 ESTADÍSTICAS DEL SISTEMA
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | ======================================================================
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | ⏱️  Tiempo activo: 335.1s
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 📹 Frames procesados: 27422
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | ⚡ FPS promedio: 81.83
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 🎯 Detecciones: 0
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 📢 Alertas enviadas: 0
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | 
+🎥 Cámaras:
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             |    ✅ Conectadas: 3
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             |    ⚠️  Desconectadas: 0
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             |    🚫 Fallidas: 1
+2026-02-18 14:50:11 | INFO     | MainThread   | __main__             | ======================================================================
+
+2026-02-18 14:50:11 | INFO     | MainThread   | rtsp-connection      | Cerrando todas las conexiones RTSP...
+2026-02-18 14:50:11 | INFO     | MainThread   | rtsp-connection      | Deteniendo sistema de monitoreo...
+2026-02-18 14:51:17 | INFO     | MainThread   | rtsp-connection      | RTSPConnectionManager iniciado: 4 URIs
+2026-02-18 14:51:17 | INFO     | MainThread   | __main__             | ShopliftingDetectionSystem initialized
+2026-02-18 14:51:18 | INFO     | MainThread   | rtsp-connection      | Connected: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=1%26subtype=0
+2026-02-18 14:51:19 | INFO     | MainThread   | rtsp-connection      | Connected: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=2%26subtype=0
+2026-02-18 14:51:20 | INFO     | MainThread   | rtsp-connection      | Connected: rtsp://admin:devkol0258@192.168.1.108:554/cam/realmonitor?channel=3%26subtype=0
+2026-02-18 14:51:50 | WARNING  | MainThread   | rtsp-connection      | Connection failed: rtsp://admin:devkol0258@192.168.1.109:554/cam/realmonitor?channel=4%26subtype=0
+2026-02-18 14:51:50 | INFO     | MainThread   | rtsp-connection      | Initialized: 3/4 cameras connected
+2026-02-18 14:51:50 | INFO     | MainThread   | __main__             | System initialized: 3/4 cameras
+2026-02-18 14:51:50 | INFO     | Thread-1 (_monitor_loop) | rtsp-connection      | Monitor started: interval=30s
+2026-02-18 14:51:57 | INFO     | MainThread   | rtsp-connection      | Monitor stopped
+2026-02-18 14:51:57 | INFO     | MainThread   | rtsp-connection      | Closed 3 connections
+2026-02-18 14:51:57 | INFO     | MainThread   | __main__             | System shutdown complete
