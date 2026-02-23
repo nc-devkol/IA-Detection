@@ -1,0 +1,9 @@
+# Ignorar contenido de carpetas shared, pero mantener las carpetas
+shared/clips/*
+!shared/clips/.gitkeep
+
+shared/logs/*
+!shared/logs/.gitkeep
+
+shared/segments/*
+!shared/segments/.gitkeep
