@@ -1,0 +1,57 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: shoplifting-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  detector:
+    build: ./detector
+    container_name: shoplifting-detector
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_DB=shoplifting
+      - SEGMENTS_DIR=/shared/segments
+      - CONFIG_PATH=/config/cameras.yaml
+      - CLIPS_DIR=/shared/clips
+      - LOG_DIR=/shared/logs
+      - OPENCV_FFMPEG_CAPTURE_OPTIONS=rtsp_transport;tcp|stimeout;5000000|max_delay;0
+      - DEBUG_PORT=9090
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./detector/config:/config:ro
+      - ./shared:/shared
+      - ./models:/models:ro
+    ports:
+      - "9090:9090"
+
+  api:
+    build: ./api
+    container_name: shoplifting-api
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_DB=shoplifting
+      - CLIPS_DIR=/shared/clips
+    volumes:
+      - ./shared:/shared
+    ports:
+      - "8000:8000"
+
+volumes:
+  mongo_data:
