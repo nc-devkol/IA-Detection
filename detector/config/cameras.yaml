@@ -1,31 +1,31 @@
 global:
-  threshold: 0.65
+  threshold: 0.60                            # Igual que standalone (antes 0.68)
   buffer_seconds: 10
   dedupe_minutes: 5
 
-  fps_target: 15
-  frame_width: 640
-  frame_height: 360
+  fps_target: 30                             # Aumentado de 15 a 30 para capturar más frames
+  frame_width: 1280                          # Aumentado de 640 a 1280 para mejor detección
+  frame_height: 720                          # Aumentado de 360 a 720 para mejor detección
 
   clip:
     pre_seconds: 2
     during_seconds: 2
     post_seconds: 2
 
-  # Inference params (from your lab)
-  win: 24
+  # Inference params (CONFIGURACIÓN STANDALONE - más conservadora)
+  win: 32                                    # Igual que standalone (antes 40)
   d: 34
-  consec_windows: 7
-  ema_alpha: 0.6
-  yolo_conf: 0.15
+  consec_windows: 10                         # Igual que standalone (antes 4) - más conservador
+  ema_alpha: 0.4                             # Igual que standalone (antes 0.7) - más suave
+  yolo_conf: 0.25
   yolo_iou: 0.5
-  tracker_path: "/models/bytetrack.yaml"   # o ponlo en /config si lo prefieres
-  anomaly_weight: 0.3                       # peso del autoencoder en score combinado (0=solo TCN, 1=solo AE)
+  tracker_path: "/models/bytetrack.yaml"
+  anomaly_weight: 0.0                        # DESACTIVADO: usar solo TCN (como standalone)
 
 models:
   pose_model_path: "/models/yolov8n-pose.pt"
   classifier_model_path: "/models/classifier/pose_cls.pt"
-  anomaly_model_path: "/models/anomaly/pose_ae.pt"
+  anomaly_model_path: null                   # null = no cargar autoencoder
 
 cameras:
   - id: "cam-entrance-01"

@@ -72,12 +72,12 @@ class RTSPCameraWorker:
 
     def _open_cv(self) -> cv2.VideoCapture:
         cap = cv2.VideoCapture(self.rtsp_uri, cv2.CAP_FFMPEG)
-        cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)       # minimize internal buffer
+        cap.set(cv2.CAP_PROP_BUFFERSIZE, 3)       # Aumentado de 1 a 3 para mejor captura
         cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter.fourcc(*"H264"))
         return cap
 
-    def _drain_buffer(self, cap: cv2.VideoCapture, max_grabs: int = 5):
-        """Drain stale frames from OpenCV's internal buffer without decoding."""
+    def _drain_buffer(self, cap: cv2.VideoCapture, max_grabs: int = 2):  # Reducido de 5 a 2
+        """Drain stale frames from OpenCV's internal buffer without decoding.""""
         for _ in range(max_grabs):
             if not cap.grab():
                 break
@@ -105,13 +105,16 @@ class RTSPCameraWorker:
                     now = time.time()
                     elapsed = now - last_frame_ts
 
-                    # If not time to process yet, grab (don't decode) to flush buffer
+                    # Rate limiting menos agresivo: solo drenar si hay mucho retraso
                     if elapsed < frame_interval:
-                        cap.grab()   # discard frame without decoding — keeps buffer fresh
+                        # Solo hacer grab si el retraso es muy pequeño (< 50% del intervalo)
+                        if elapsed < frame_interval * 0.5:
+                            cap.grab()   # discard frame without decoding
+                        time.sleep(0.001)  # Small sleep para no consumir CPU
                         continue
 
-                    # Drain any remaining stale frames, then decode the freshest one
-                    self._drain_buffer(cap)
+                    # Drain solo 1-2 frames en lugar de 5 para no perder información
+                    self._drain_buffer(cap, max_grabs=1)
                     ok, frame = cap.read()
                     if not ok or frame is None:
                         self.logger.warning(f"[{self.camera_id}] OpenCV RTSP read failed. Reconnecting...")
@@ -163,7 +166,9 @@ class RTSPCameraWorker:
                     if not out.triggered:
                         continue
 
-                    event_time = datetime.utcnow()
+                    # Use timezone-aware datetime
+                    from datetime import timezone
+                    event_time = datetime.now(timezone.utc)
                     event_key = build_event_key(self.camera_id, self.zone, self.event_type)
 
                     # Dedupe (MVP)

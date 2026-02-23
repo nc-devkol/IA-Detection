@@ -29,9 +29,16 @@ class FFMpegSegmenter:
     def start(self):
         os.makedirs(self.cfg.out_dir, exist_ok=True)
 
-        # Using epoch seconds (%s). On Linux FFmpeg builds usually support it.
-        # Output as MPEG-TS segments (best for concat).
-        out_pattern = os.path.join(self.cfg.out_dir, "%s.ts")
+        # Windows-compatible: use %Y%m%d%H%M%S format then convert via strftime_mkdir_p
+        # Actually, better: use segment_format_options with epoch time
+        # Most reliable: use %s but ensure FFmpeg build supports it, fallback to manual naming
+        import platform
+        if platform.system() == "Windows":
+            # Windows: use timestamp format that works
+            out_pattern = os.path.join(self.cfg.out_dir, "%Y%m%d_%H%M%S.ts")
+        else:
+            # Linux: use epoch seconds
+            out_pattern = os.path.join(self.cfg.out_dir, "%s.ts")
 
         cmd = [
             "ffmpeg",
@@ -49,12 +56,24 @@ class FFMpegSegmenter:
         ]
 
         self.logger.info(f"[segmenter] starting ffmpeg segments -> {out_pattern}")
-        self.proc = subprocess.Popen(
-            cmd,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            preexec_fn=os.setsid,  # allow killing process group
-        )
+        
+        # Platform-specific process creation
+        import platform
+        if platform.system() == "Windows":
+            # Windows: no preexec_fn
+            self.proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.PIPE,  # Capture stderr for debugging
+            )
+        else:
+            # Unix: use setsid for process group management
+            self.proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.PIPE,
+                preexec_fn=os.setsid,
+            )
 
     def is_running(self) -> bool:
         return self.proc is not None and self.proc.poll() is None
@@ -63,26 +82,51 @@ class FFMpegSegmenter:
         if not self.proc:
             return
         try:
-            pgid = os.getpgid(self.proc.pid)
-            os.killpg(pgid, signal.SIGTERM)
-        except Exception:
-            pass
+            import platform
+            if platform.system() == "Windows":
+                # Windows: terminate directly
+                self.proc.terminate()
+                self.proc.wait(timeout=5)
+            else:
+                # Unix: kill process group
+                pgid = os.getpgid(self.proc.pid)
+                os.killpg(pgid, signal.SIGTERM)
+        except Exception as e:
+            self.logger.warning(f"[segmenter] error stopping: {e}")
+            try:
+                self.proc.kill()
+            except Exception:
+                pass
 
     def cleanup_old_segments(self):
         """
         Deletes old segments beyond keep_seconds.
         """
         try:
+            if not os.path.exists(self.cfg.out_dir):
+                return
+                
             files = [f for f in os.listdir(self.cfg.out_dir) if f.endswith(".ts")]
-            # filenames are epoch seconds: "1700000000.ts"
-            files_sorted = sorted(files, key=lambda x: int(x.replace(".ts", "")))
-            if len(files_sorted) <= self.cfg.keep_seconds:
+            if len(files) <= self.cfg.keep_seconds:
                 return
 
-            to_delete = files_sorted[: max(0, len(files_sorted) - self.cfg.keep_seconds)]
-            for f in to_delete:
+            # Sort by modification time (works for both naming schemes)
+            files_with_mtime = []
+            for f in files:
+                fpath = os.path.join(self.cfg.out_dir, f)
                 try:
-                    os.remove(os.path.join(self.cfg.out_dir, f))
+                    mtime = os.path.getmtime(fpath)
+                    files_with_mtime.append((f, mtime))
+                except Exception:
+                    continue
+            
+            # Keep newest N files
+            files_with_mtime.sort(key=lambda x: x[1])
+            to_delete = files_with_mtime[: max(0, len(files_with_mtime) - self.cfg.keep_seconds)]
+            
+            for fname, _ in to_delete:
+                try:
+                    os.remove(os.path.join(self.cfg.out_dir, fname))
                 except Exception:
                     pass
         except Exception:

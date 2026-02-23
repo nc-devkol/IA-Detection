@@ -14,13 +14,13 @@ services:
     restart: unless-stopped
     depends_on:
       - mongo
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
     environment:
       - MONGO_URI=mongodb://mongo:27017
       - MONGO_DB=shoplifting

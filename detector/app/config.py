@@ -13,9 +13,9 @@ class GlobalConfig(BaseModel):
     threshold: float = 0.65
     buffer_seconds: int = 10
     dedupe_minutes: int = 5
-    fps_target: int = 15
-    frame_width: int = 640
-    frame_height: int = 360
+    fps_target: int = 30  # Aumentado de 15 a 30 para procesar más frames
+    frame_width: int = 1280  # Aumentado de 640 a 1280 para mejor detección
+    frame_height: int = 720  # Aumentado de 360 a 720 para mejor detección
     jpeg_quality: int = 75
     clip: ClipConfig = Field(default_factory=ClipConfig)
     win: int = 24

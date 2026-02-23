@@ -37,18 +37,29 @@ def clip_worker_loop(*, jobs_queue: Queue, db, clips_dir: str, logger):
             continue
 
         try:
-            # Wait so that during/post segments exist on disk
-            wait_s = int(job.during_seconds + job.post_seconds)
+            # Wait longer to ensure all segments are written to disk
+            wait_s = int(job.during_seconds + job.post_seconds + 2)
             if wait_s > 0:
+                logger.info(f"[clip-worker] waiting {wait_s}s for segments to flush...")
                 time.sleep(wait_s)
 
             start_utc = job.created_at - timedelta(seconds=job.pre_seconds)
             end_utc = job.created_at + timedelta(seconds=job.during_seconds + job.post_seconds)
+            
+            logger.info(
+                f"[clip-worker] camera={job.camera_id} seeking segments from "
+                f"{start_utc.isoformat()} to {end_utc.isoformat()} "
+                f"(total: {job.pre_seconds + job.during_seconds + job.post_seconds}s)"
+            )
 
             # Retry loop: segments may not be flushed to disk yet by FFmpeg
             segments = []
             for attempt in range(1, MAX_RETRIES + 1):
                 segments = select_segments(job.segments_dir, start_utc, end_utc)
+                logger.info(
+                    f"[clip-worker] attempt {attempt}/{MAX_RETRIES}: "
+                    f"found {len(segments)} segments in {job.segments_dir}"
+                )
                 if segments:
                     break
                 logger.warning(

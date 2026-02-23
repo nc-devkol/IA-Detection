@@ -12,7 +12,7 @@ from ultralytics import YOLO
 # ===== Pose normalization indices (your lab) =====
 L_SH, R_SH, L_HIP, R_HIP = 5, 6, 11, 12
 
-def normalize_kps(kps_17x3: np.ndarray, min_conf: float = 0.25) -> Optional[np.ndarray]:
+def normalize_kps(kps_17x3: np.ndarray, min_conf: float = 0.35) -> Optional[np.ndarray]:  # Igual que standalone
     xy = kps_17x3[:, :2].astype(np.float32)
     cf = kps_17x3[:, 2].astype(np.float32)
 

@@ -23,21 +23,51 @@ def select_segments(
     segments_dir: str,
     start_utc: datetime,
     end_utc: datetime,
-    margin_seconds: int = 2,
+    margin_seconds: int = 3,
 ) -> List[str]:
     """
-    Selects segment files by epoch-second filenames: <epoch>.ts
-    Adds a small margin on each side to cover FFmpeg buffering delays.
+    Selects segment files within time range.
+    Supports both epoch-second filenames (Linux) and timestamp format (Windows).
+    Adds margin to cover FFmpeg buffering delays.
     """
+    import platform
+    
+    # Ensure timezone-aware datetimes
+    if start_utc.tzinfo is None:
+        start_utc = start_utc.replace(tzinfo=timezone.utc)
+    if end_utc.tzinfo is None:
+        end_utc = end_utc.replace(tzinfo=timezone.utc)
+    
     start_s = _epoch_seconds(start_utc) - margin_seconds
     end_s = _epoch_seconds(end_utc) + margin_seconds
 
     paths = []
-    for sec in range(start_s, end_s + 1):
-        p = os.path.join(segments_dir, f"{sec}.ts")
-        if os.path.exists(p):
-            paths.append(p)
-    return paths
+    
+    # Try to find segments - support both naming conventions
+    if platform.system() == "Windows":
+        # Windows format: 20260223_143055.ts
+        # List all .ts files and filter by modification time
+        if not os.path.exists(segments_dir):
+            return paths
+        
+        all_files = [f for f in os.listdir(segments_dir) if f.endswith('.ts')]
+        for fname in sorted(all_files):
+            fpath = os.path.join(segments_dir, fname)
+            try:
+                # Use file modification time as proxy for segment time
+                mtime = os.path.getmtime(fpath)
+                if start_s <= mtime <= end_s:
+                    paths.append(fpath)
+            except Exception:
+                continue
+    else:
+        # Linux format: epoch.ts
+        for sec in range(start_s, end_s + 1):
+            p = os.path.join(segments_dir, f"{sec}.ts")
+            if os.path.exists(p):
+                paths.append(p)
+    
+    return sorted(paths)
 
 def concat_segments_to_mp4(segment_paths: List[str], out_mp4: str) -> None:
     """
@@ -47,11 +77,19 @@ def concat_segments_to_mp4(segment_paths: List[str], out_mp4: str) -> None:
     if not segment_paths:
         raise RuntimeError("No segments found to build clip")
 
+    print(f"[concat_segments_to_mp4] Concatenating {len(segment_paths)} segments:")
+    for i, seg in enumerate(segment_paths[:5]):  # Show first 5
+        print(f"  [{i}] {seg}")
+    if len(segment_paths) > 5:
+        print(f"  ... and {len(segment_paths) - 5} more")
+
     with tempfile.TemporaryDirectory() as tmp:
         list_file = os.path.join(tmp, "list.txt")
         with open(list_file, "w", encoding="utf-8") as f:
             for p in segment_paths:
-                f.write(f"file '{p}'\n")
+                # Escape path for FFmpeg concat
+                escaped = p.replace("\\", "/")
+                f.write(f"file '{escaped}'\n")
 
         cmd = [
             "ffmpeg", "-y",
@@ -63,4 +101,7 @@ def concat_segments_to_mp4(segment_paths: List[str], out_mp4: str) -> None:
             "-pix_fmt", "yuv420p",
             out_mp4,
         ]
-        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            print(f"[concat_segments_to_mp4] FFmpeg error: {result.stderr}")
+            raise RuntimeError(f"FFmpeg concat failed: {result.stderr}")
